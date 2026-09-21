@@ -3,6 +3,7 @@
    =================================================================== */
 
 :root {
+  color-scheme: light;
   --color-primary: #0058B5;
   --color-primary-dark: #00479A;
   --color-accent: #D7E300;
@@ -335,9 +336,9 @@ h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); }
 
 /* ================= TESTIMONIAL CAROUSEL ================= */
 .carousel { position: relative; }
-.carousel-track { display: flex; overflow: hidden; border-radius: var(--radius-card); }
-.carousel-slide { min-width: 100%; }
-.quote-card { background: var(--color-white); border-radius: var(--radius-card); padding: 44px 30px; box-shadow: var(--shadow-card); min-height: 340px; }
+.carousel-track { display: flex; overflow: hidden; border-radius: var(--radius-card); width: 100%; }
+.carousel-slide { flex: 0 0 100%; min-width: 100%; max-width: 100%; }
+.quote-card { background: var(--color-white); border-radius: var(--radius-card); padding: 44px 30px; box-shadow: var(--shadow-card); min-height: 340px; color: var(--color-text); }
 .quote-mark { color: var(--color-accent); margin-bottom: 14px; }
 .quote-text { font-size: 1.08rem; color: var(--color-text); margin-bottom: 22px; }
 .quote-author { font-family: var(--font-heading); font-weight: 700; margin: 0; }
