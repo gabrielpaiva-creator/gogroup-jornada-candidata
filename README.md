@@ -17,10 +17,25 @@ O Brandbook define que a grafia correta em texto corrido é **"Gogroup"** (G mai
 "ogroup" minúsculo) — nunca "GoGroup". Isso foi corrigido em todo o site. O logotipo
 oficial (elemento gráfico) é grafado **"gogroup"** todo em minúsculas, em uma única cor
 sólida — por isso a wordmark do navbar/rodapé foi simplificada para essa forma, sem o
-tratamento bicolor usado antes. O Brandbook também não documenta os logotipos das marcas
-individuais do portfólio (Gocase, Apice, Barbours, Kokeshi, By Samia, Rituária, Aua
-Natural, Lescent, Yenzah) — apenas a marca-mãe Gogroup — então os cards dessas marcas em
-`#universo` continuam usando wordmarks tipográficos (ver "Assets pendentes").
+tratamento bicolor usado antes.
+
+## Logos das marcas do portfólio (`assets/img/brands/`)
+
+O Brandbook só documenta a marca-mãe Gogroup, não as marcas individuais do portfólio.
+Em vez de usar wordmarks tipográficos genéricos, os logos reais de 8 das 10 marcas foram
+obtidos diretamente dos sites oficiais de cada uma (o logotipo `<img>`/`<svg>` do
+cabeçalho de cada site, na maior resolução disponível — no caso da Gocase, o próprio SVG
+vetorial inline do site):
+
+- Com logo real: Gocase, Apice Cosméticos, Barbour's Beauty, Kokeshi, By Samia,
+  Rituária, Auá Natural, Lescent.
+- Sem logo: **AZ** (o site azbuy.com.br não respondeu em nenhuma tentativa de acesso —
+  provavelmente fora do ar ou bloqueado) e **Yenzah** (não tem site próprio, só
+  Instagram). Esses dois continuam com wordmark tipográfico em `.brand-card-name`.
+
+**Onde trocar:** basta substituir o arquivo correspondente em `assets/img/brands/` (ou
+adicionar um novo `<img class="brand-card-logo">` para AZ/Yenzah em `index.html`,
+seção `#universo`) quando/se você tiver os arquivos oficiais.
 
 ## Stack
 
@@ -47,19 +62,13 @@ node server.js
 
 Depois abra `http://localhost:5173`.
 
-## Assets pendentes
+## Nossos valores é um carousel (igual aos depoimentos)
 
-Nenhum dos quatro PDFs fornecidos contém os logotipos vetoriais das marcas do
-ecossistema (Gocase, AZ, Apice, Barbours, Kokeshi, By Samia, Rituária, Aua Natural,
-Lescent, Yenzah) — o Brandbook documenta apenas a marca-mãe Gogroup. Para não inventar
-identidades visuais, os cards de marca em `#universo` e os chips em `#links` continuam
-usando **wordmarks tipográficos** (nome da marca em texto estilizado) como placeholder
-claramente identificável.
-
-**Onde trocar:** em `index.html`, dentro de `.brand-card-name` (seção `#universo`) —
-basta substituir o `<span>` por um `<img>`/`<svg>` do logo oficial de cada marca
-quando os arquivos vetoriais estiverem disponíveis. Se você tiver esses logos em outro
-arquivo (ex.: um brandbook por marca, ou um .zip de assets), envie que eu integro.
+Cada mantra aparece em um slide "completo" — arte oficial + tag + definição + traços +
+comparativo "Alto padrão vs. Não alinhado com a nossa cultura" — e a pessoa navega entre
+os 5 com os mesmos controles (setas, dots, swipe, teclado) do carousel de depoimentos.
+O JS do carousel foi generalizado (`initCarousel` em `assets/script.js`) para os dois
+usarem o mesmo componente via atributos `data-carousel`/`data-track`/`data-prev`/etc.
 
 ## Imagens extraídas dos PDFs (`assets/img/`)
 
@@ -73,8 +82,22 @@ região exata da foto/arte com `sharp`, sem inventar nem gerar nada nas imagens:
   Cultura (Let Lou e Gio Sabrina), incorporados como slides 5 e 6 do carousel.
 - `ponta-firme.webp`, `mente-aberta.webp`, `time-campeao.webp`,
   `transparencia-maxima.webp`, `amor-pelo-cliente.webp` — a arte oficial de cada mantra,
-  usada como imagem de topo dos cards em `#valores` (mesmas cores e ilustrações que o
+  usada como imagem de topo dos slides em `#valores` (mesmas cores e ilustrações que o
   time de marca criou para cada valor no Deck de Cultura).
+
+## Doodles/stickers decorativos (`assets/img/stickers/`)
+
+Recortados do sticker sheet do Brandbook (chroma-key removendo o fundo azul sólido,
+com `sharp`, para ficarem transparentes) e espalhados pela página para deixá-la menos
+"branca"/institucional, como pedido: o foguete e o planeta do hero, o capacete de
+corrida e a bandeira quadriculada perto de "Nossos valores", o troféu e o foguete em
+"Sua jornada", o globo em "O que é o Gogroup" e em "Escritórios", o diamante em
+"Prepare-se". `f1car.jpg` é o carro de Fórmula 1 do Deck de Cultura (slide "Uma empresa
+de Motoristas"), usado como fundo com fade na seção de CTA final — a cor de fundo da
+própria ilustração já é quase igual ao azul da seção, então a transição fica suave sem
+precisar de recorte. Sobraram alguns stickers extraídos mas não usados ainda (`mind.png`,
+`box-heart.png`, `lightbulb.png`, `badge.png`) — disponíveis para novas seções se quiser
+mais desse tratamento em algum lugar específico.
 
 ## Números de crescimento (seção "Nossa trajetória")
 
