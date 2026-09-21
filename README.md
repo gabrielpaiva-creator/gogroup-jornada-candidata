@@ -1,12 +1,26 @@
-# Manual da Pessoa Candidata — GoGroup
+# Manual da Pessoa Candidata — Gogroup
 
-Landing page de employer branding construída a partir de dois documentos-fonte:
+Landing page de employer branding construída a partir de quatro documentos-fonte:
 
-- **Conteúdo:** `[GOGROUP] Manual da Pessoa Candidata - R&S.pptx.pdf`
-- **Visual:** `Design system - Gogroup.pdf` (paleta, tipografia, raios de borda, botões, doodles)
+- **Conteúdo do processo seletivo:** `[GOGROUP] Manual da Pessoa Candidata - R&S.pptx.pdf`
+- **Direção visual inicial:** `Design system - Gogroup.pdf` (paleta, tipografia, raios de borda, botões)
+- **Mantras/valores em detalhe + arte oficial de cada um:** `Deck de cultura.pdf`
+- **Identidade de marca (logotipo, grafia, cores oficiais):** `Brandbook Gogroup.pdf`
 
-Nenhum dado corporativo, depoimento, etapa de processo ou link foi inventado — todo o
-texto vem diretamente dos PDFs fornecidos (extraídos com `pdftotext`).
+Nenhum dado corporativo, depoimento, mantra ou link foi inventado — todo o texto vem
+diretamente dos PDFs fornecidos (extraídos com `pdftotext` para texto e `pdf-to-img` +
+`sharp` para imagens/recortes).
+
+## Correções de marca (via Brandbook)
+
+O Brandbook define que a grafia correta em texto corrido é **"Gogroup"** (G maiúsculo,
+"ogroup" minúsculo) — nunca "GoGroup". Isso foi corrigido em todo o site. O logotipo
+oficial (elemento gráfico) é grafado **"gogroup"** todo em minúsculas, em uma única cor
+sólida — por isso a wordmark do navbar/rodapé foi simplificada para essa forma, sem o
+tratamento bicolor usado antes. O Brandbook também não documenta os logotipos das marcas
+individuais do portfólio (Gocase, Apice, Barbours, Kokeshi, By Samia, Rituária, Aua
+Natural, Lescent, Yenzah) — apenas a marca-mãe Gogroup — então os cards dessas marcas em
+`#universo` continuam usando wordmarks tipográficos (ver "Assets pendentes").
 
 ## Stack
 
@@ -35,17 +49,32 @@ Depois abra `http://localhost:5173`.
 
 ## Assets pendentes
 
-Os PDFs de origem não permitiram extração confiável de logos vetoriais das marcas do
+Nenhum dos quatro PDFs fornecidos contém os logotipos vetoriais das marcas do
 ecossistema (Gocase, AZ, Apice, Barbours, Kokeshi, By Samia, Rituária, Aua Natural,
-Lescent, Yenzah). Para não inventar identidades visuais, os cards de marca em
-`#universo` e os chips em `#links` usam **wordmarks tipográficos** (nome da marca em
-texto estilizado) como placeholder claramente identificável.
+Lescent, Yenzah) — o Brandbook documenta apenas a marca-mãe Gogroup. Para não inventar
+identidades visuais, os cards de marca em `#universo` e os chips em `#links` continuam
+usando **wordmarks tipográficos** (nome da marca em texto estilizado) como placeholder
+claramente identificável.
 
 **Onde trocar:** em `index.html`, dentro de `.brand-card-name` (seção `#universo`) —
 basta substituir o `<span>` por um `<img>`/`<svg>` do logo oficial de cada marca
-quando os arquivos vetoriais estiverem disponíveis. O mesmo vale para o favicon
-(`assets/favicon.svg`), hoje um ícone de foguete genérico no lugar do logo oficial do
-GoGroup.
+quando os arquivos vetoriais estiverem disponíveis. Se você tiver esses logos em outro
+arquivo (ex.: um brandbook por marca, ou um .zip de assets), envie que eu integro.
+
+## Imagens extraídas dos PDFs (`assets/img/`)
+
+Como os PDFs não têm um "exportar imagem" direto, as fotos e ilustrações foram obtidas
+renderizando as páginas relevantes em alta resolução (`pdf-to-img`) e recortando a
+região exata da foto/arte com `sharp`, sem inventar nem gerar nada nas imagens:
+
+- `andre.webp`, `isabella.webp`, `lucas.webp`, `ravenna.webp` — fotos reais dos 4
+  depoimentos do Manual, recortadas das próprias páginas de depoimento.
+- `letlou.webp`, `gio.webp` — fotos dos 2 depoimentos adicionais encontrados no Deck de
+  Cultura (Let Lou e Gio Sabrina), incorporados como slides 5 e 6 do carousel.
+- `ponta-firme.webp`, `mente-aberta.webp`, `time-campeao.webp`,
+  `transparencia-maxima.webp`, `amor-pelo-cliente.webp` — a arte oficial de cada mantra,
+  usada como imagem de topo dos cards em `#valores` (mesmas cores e ilustrações que o
+  time de marca criou para cada valor no Deck de Cultura).
 
 ## Números de crescimento (seção "Nossa trajetória")
 

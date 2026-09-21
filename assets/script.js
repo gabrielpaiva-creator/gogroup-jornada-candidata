@@ -102,6 +102,16 @@
     revealTargets.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
+  /* ---------- Value cards accordion ---------- */
+  document.querySelectorAll('.value-toggle').forEach(function (btn) {
+    var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      panel.hidden = open;
+    });
+  });
+
   /* ---------- Journey stepper (tabs) ---------- */
   var tabs = Array.prototype.slice.call(document.querySelectorAll('#stepperTabs [role="tab"]'));
   var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
@@ -158,8 +168,7 @@
 
   function goTo(i) {
     current = (i + slides.length) % slides.length;
-    track.style.transform = 'translateX(-' + (current * 100) + '%)';
-    track.style.transition = prefersReducedMotion ? 'none' : 'transform 420ms cubic-bezier(.22,.72,.32,1)';
+    slides.forEach(function (s, si) { s.classList.toggle('is-active', si === current); });
     dots.forEach(function (d, di) { d.setAttribute('aria-selected', di === current ? 'true' : 'false'); });
     indexLabel.textContent = pad(current + 1) + ' / ' + pad(slides.length);
   }
