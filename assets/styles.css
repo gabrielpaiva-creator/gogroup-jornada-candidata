@@ -4,15 +4,22 @@
 
 :root {
   color-scheme: light;
-  --color-primary: #0058B5;
-  --color-primary-dark: #00479A;
-  --color-accent: #D7E300;
-  --color-accent-hover: #C5D200;
+  --color-primary: #2659A5;
+  --color-primary-dark: #1E4880;
+  --color-accent: #D7D900;
+  --color-accent-hover: #C2C400;
   --color-background: #EAF2FB;
   --color-ice: #D2E7FA;
   --color-text: #0A3D7A;
   --color-white: #FFFFFF;
   --color-text-soft: #4D6D96;
+
+  /* Paleta oficial do Brandbook Gogroup — usada para color blocking */
+  --color-orange: #E5381A;
+  --color-pink: #E61782;
+  --color-red: #E5273C;
+  --color-cyan: #3DBFEF;
+  --color-yellow: #F8AE13;
 
   --radius-sm: 16px;
   --radius-md: 24px;
@@ -201,8 +208,8 @@ h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); }
 /* ================= HERO ================= */
 .hero {
   padding: 56px 0 90px; position: relative; overflow: hidden;
-  background: radial-gradient(circle at 82% 30%, rgba(0,88,181,.10), transparent 55%),
-              radial-gradient(circle at 10% 90%, rgba(0,88,181,.07), transparent 45%);
+  background: radial-gradient(circle at 82% 30%, rgba(38,89,165,.10), transparent 55%),
+              radial-gradient(circle at 10% 90%, rgba(38,89,165,.07), transparent 45%);
 }
 .hero-grid { display: grid; gap: 56px; align-items: center; }
 .hero h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); letter-spacing: -.01em; }
@@ -211,7 +218,7 @@ h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 16px; margin: 30px 0 8px; }
 
 .hero-visual { position: relative; height: 340px; display: none; }
-.orbit { position: absolute; border: 1.5px dashed rgba(0,88,181,.28); border-radius: 50%; top: 50%; left: 50%; }
+.orbit { position: absolute; border: 1.5px dashed rgba(38,89,165,.28); border-radius: 50%; top: 50%; left: 50%; }
 .orbit-1 { width: 380px; height: 380px; margin: -190px 0 0 -190px; }
 .orbit-2 { width: 280px; height: 280px; margin: -140px 0 0 -140px; }
 .planet-big {
@@ -270,6 +277,11 @@ h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); }
   border-top: 3px solid var(--color-primary);
   transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
 }
+/* Color blocking: cada card do universo puxa uma cor da paleta do brandbook */
+.brand-grid .brand-card:nth-child(5n+2) { border-top-color: var(--color-orange); }
+.brand-grid .brand-card:nth-child(5n+3) { border-top-color: var(--color-pink); }
+.brand-grid .brand-card:nth-child(5n+4) { border-top-color: var(--color-cyan); }
+.brand-grid .brand-card:nth-child(5n+5) { border-top-color: var(--color-yellow); }
 .brand-card:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 22px 40px -20px rgba(10,61,122,.3); }
 .brand-card-name { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--color-text); }
 .brand-card-logo { max-width: 100%; max-height: 44px; width: auto; object-fit: contain; align-self: flex-start; }
@@ -310,7 +322,7 @@ h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); }
 }
 
 /* ================= TIMELINE ================= */
-.timeline { display: flex; flex-direction: column; gap: 6px; margin-bottom: 64px; position: relative; padding-left: 28px; border-left: 2px dashed rgba(0,88,181,.3); }
+.timeline { display: flex; flex-direction: column; gap: 6px; margin-bottom: 64px; position: relative; padding-left: 28px; border-left: 2px dashed rgba(38,89,165,.3); }
 .timeline-item { position: relative; padding: 18px 0 18px 22px; }
 .timeline-dot { position: absolute; left: -37px; top: 24px; width: 14px; height: 14px; border-radius: 50%; background: var(--color-accent); box-shadow: 0 0 0 5px var(--color-background); }
 .timeline-year { font-family: var(--font-heading); font-weight: 700; color: var(--color-primary); font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; }
@@ -318,7 +330,7 @@ h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); }
 .timeline-item p { color: var(--color-text-soft); max-width: 60ch; margin: 0; }
 
 @media (min-width: 900px) {
-  .timeline { flex-direction: row; border-left: none; border-top: 2px dashed rgba(0,88,181,.3); padding-left: 0; padding-top: 28px; gap: 28px; }
+  .timeline { flex-direction: row; border-left: none; border-top: 2px dashed rgba(38,89,165,.3); padding-left: 0; padding-top: 28px; gap: 28px; }
   .timeline-item { flex: 1; padding: 0 0 0 4px; }
   .timeline-dot { left: 12px; top: -35px; }
 }
@@ -326,6 +338,10 @@ h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); }
 /* ================= NUMBERS ================= */
 .numbers-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .number-card { background: var(--color-white); border-radius: var(--radius-lg); padding: 26px 22px; box-shadow: var(--shadow-card); border-top: 3px solid var(--color-primary); }
+.number-card:nth-child(2) { border-top-color: var(--color-orange); }
+.number-card:nth-child(3) { border-top-color: var(--color-pink); }
+.number-card:nth-child(4) { border-top-color: var(--color-cyan); }
+.number-card:nth-child(5) { border-top-color: var(--color-yellow); }
 .number-card-accent { background: var(--color-primary); color: var(--color-white); border-top-color: var(--color-accent); }
 .number-card-accent .number-label, .number-card-accent .number-growth { color: rgba(255,255,255,.85); }
 .number-label { font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--color-text-soft); margin-bottom: 8px; }
@@ -368,19 +384,53 @@ h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); }
 .carousel-slide { display: none; }
 .carousel-slide.is-active { display: block; animation: slide-fade-in 380ms var(--ease); }
 @keyframes slide-fade-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-.quote-card { background: var(--color-white); border-radius: var(--radius-card); padding: 44px 30px; box-shadow: var(--shadow-card); min-height: 340px; color: var(--color-text); }
-.quote-mark { color: var(--color-accent); margin-bottom: 14px; }
+.quote-card {
+  background: var(--color-white); border-radius: var(--radius-card);
+  padding: 64px 30px 40px; box-shadow: var(--shadow-card); min-height: 340px; color: var(--color-text);
+  display: flex; flex-direction: column; align-items: center; text-align: center; overflow: visible;
+}
+
+/* ---- Foto em destaque: blob colorido puxado da paleta do brandbook ---- */
+.quote-photo { position: relative; width: 148px; height: 148px; flex-shrink: 0; margin-top: -92px; margin-bottom: 24px; }
+.quote-photo-blob {
+  position: absolute; inset: -16px;
+  background: var(--person-color, var(--color-primary));
+  border-radius: 42% 58% 63% 37% / 45% 40% 60% 55%;
+  animation: blob-morph 10s ease-in-out infinite;
+}
+.quote-avatar {
+  position: relative; display: block; width: 100%; height: 100%; border-radius: 50%;
+  object-fit: cover; box-shadow: 0 0 0 5px var(--color-white);
+}
+.quote-mark-badge {
+  position: absolute; bottom: 2px; right: -4px; width: 38px; height: 38px; border-radius: 50%;
+  background: var(--color-white); color: var(--person-color, var(--color-primary));
+  display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-card);
+}
+@keyframes blob-morph {
+  0%, 100% { border-radius: 42% 58% 63% 37% / 45% 40% 60% 55%; }
+  50% { border-radius: 58% 42% 40% 60% / 55% 60% 40% 45%; }
+}
+@media (prefers-reduced-motion: reduce) { .quote-photo-blob { animation: none; } }
+
+.quote-content { max-width: 62ch; }
 .quote-text { font-size: 1.08rem; color: var(--color-text); margin-bottom: 22px; }
 .quote-author { font-family: var(--font-heading); font-weight: 700; margin: 0; }
 .quote-role { color: var(--color-text-soft); font-size: .88rem; margin: 0; }
-.quote-person { display: flex; align-items: center; gap: 14px; margin-top: 4px; }
-.quote-avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex-shrink: 0; box-shadow: 0 0 0 3px var(--color-ice); }
+.quote-person { margin-top: 4px; }
+
+@media (min-width: 860px) {
+  .quote-card { flex-direction: row; align-items: center; text-align: left; padding: 46px 44px; gap: 40px; }
+  .quote-photo { width: 200px; height: 200px; margin-top: 0; margin-bottom: 0; margin-left: -20px; }
+  .quote-mark-badge { width: 44px; height: 44px; }
+  .quote-content { flex: 1; }
+}
 
 .carousel-controls { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 26px; }
 .carousel-btn { width: 44px; height: 44px; border-radius: 50%; background: var(--color-white); border: none; color: var(--color-primary); box-shadow: var(--shadow-card); display: flex; align-items: center; justify-content: center; transition: transform var(--dur-fast) var(--ease); }
 .carousel-btn:hover { transform: scale(1.08); background: var(--color-accent); color: var(--color-text); }
 .carousel-dots { display: flex; gap: 8px; }
-.carousel-dots button { width: 9px; height: 9px; border-radius: 50%; background: rgba(0,88,181,.25); border: none; padding: 0; }
+.carousel-dots button { width: 9px; height: 9px; border-radius: 50%; background: rgba(38,89,165,.25); border: none; padding: 0; }
 .carousel-dots button[aria-selected="true"] { background: var(--color-primary); width: 22px; border-radius: var(--radius-pill); transition: width var(--dur-fast) var(--ease); }
 .carousel-index { font-weight: 700; font-size: .85rem; color: var(--color-text-soft); min-width: 54px; text-align: center; margin: 0; }
 
@@ -399,6 +449,13 @@ h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); }
 .tip-card { background: var(--color-white); border-radius: var(--radius-card); padding: 30px 24px; box-shadow: var(--shadow-card); border-top: 3px solid var(--color-primary); transition: transform var(--dur-fast) var(--ease); }
 .tip-card:hover { transform: translateY(-4px); }
 .tip-icon { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: var(--color-ice); color: var(--color-primary); margin-bottom: 16px; }
+/* Color blocking: cada dica ganha uma cor da paleta do brandbook */
+.tip-card:nth-child(2) { border-top-color: var(--color-orange); }
+.tip-card:nth-child(2) .tip-icon { background: rgba(229,56,26,.12); color: var(--color-orange); }
+.tip-card:nth-child(3) { border-top-color: var(--color-pink); }
+.tip-card:nth-child(3) .tip-icon { background: rgba(230,23,130,.12); color: var(--color-pink); }
+.tip-card:nth-child(4) { border-top-color: var(--color-yellow); }
+.tip-card:nth-child(4) .tip-icon { background: rgba(248,174,19,.15); color: var(--color-yellow); }
 .tip-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
 .tip-card p { color: var(--color-text-soft); font-size: .92rem; margin: 0; }
 
