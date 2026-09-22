@@ -62,6 +62,27 @@ node server.js
 
 Depois abra `http://localhost:5173`.
 
+## Deploy no GoDeploy (devgogroup.com)
+
+O endpoint de upload do GoDeploy corrompe arquivos binários enviados via
+multipart: ele decodifica o conteúdo como UTF-8 no servidor, então qualquer
+byte fora do ASCII vira o caractere de substituição `U+FFFD`, destruindo
+PNG/WEBP/JPG (SVG, HTML, CSS e JS sobrevivem porque já são texto UTF-8/ASCII
+válido).
+
+Workaround: `scripts/build-deploy-html.js` gera uma cópia de `index.html` com
+todas as imagens de `assets/img/` embutidas como data URI base64 (texto puro,
+imune ao bug) em `.scratch/deploy/index.html` — o `index.html` do repositório
+não é alterado.
+
+```bash
+node scripts/build-deploy-html.js
+```
+
+Ao atualizar o app no GoDeploy, suba `.scratch/deploy/index.html` como
+`index.html`, junto de `assets/favicon.svg`, `assets/script.js` e
+`assets/styles.css` (sem `assets/img/*` — já foram embutidas no HTML).
+
 ## Nossos valores é um carousel (igual aos depoimentos)
 
 Cada mantra aparece em um slide "completo" — arte oficial + tag + definição + traços +
