@@ -12,8 +12,8 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css?v=2">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css?v=3">
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -48,6 +48,7 @@
   <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l2.2 6.8H21l-5.6 4.1 2.1 6.9L12 15.8 6.5 19.8l2.1-6.9L3 8.8h6.8z" fill="currentColor"/></symbol>
   <symbol id="i-star-outline" viewBox="0 0 24 24"><path d="M12 3l2.5 6.9L22 10l-6 4.6L18 22l-6-4.3L6 22l2-7.4L2 10l7.5-.1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
   <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2c.5 4 2.5 7.5 8 8-5.5.5-7.5 4-8 8-.5-4-2.5-7.5-8-8 5.5-.5 7.5-4 8-8z" fill="currentColor"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
   <symbol id="i-planet" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><ellipse cx="12" cy="12" rx="10.5" ry="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
 </svg>
 
@@ -63,6 +64,7 @@
       <ul>
         <li><a href="#sobre" data-nav>O Gogroup</a></li>
         <li><a href="#universo" data-nav>Nosso universo</a></li>
+        <li><a href="#test-drive" data-nav>Test drive</a></li>
         <li><a href="#valores" data-nav>Nossos valores</a></li>
         <li><a href="#jornada" data-nav>Sua jornada</a></li>
         <li><a href="#trabalhar" data-nav>Como é trabalhar aqui</a></li>
@@ -89,6 +91,7 @@
     <ul>
       <li><a href="#sobre" data-nav>O Gogroup</a></li>
       <li><a href="#universo" data-nav>Nosso universo</a></li>
+      <li><a href="#test-drive" data-nav>Test drive</a></li>
       <li><a href="#valores" data-nav>Nossos valores</a></li>
       <li><a href="#jornada" data-nav>Sua jornada</a></li>
       <li><a href="#trabalhar" data-nav>Como é trabalhar aqui</a></li>
@@ -109,8 +112,9 @@
         <p class="hero-sub">Ficamos muito felizes com o seu interesse em fazer parte do nosso time! Este espaço foi criado para te apresentar nossa história, nossa cultura e cada etapa do processo seletivo — para você chegar preparado(a) em todos os momentos da jornada.</p>
         <div class="hero-ctas">
           <a href="#jornada" class="btn btn-primary">Conheça sua jornada <svg class="icon" width="18" height="18"><use href="#i-arrow-down"/></svg></a>
-          <a href="#sobre" class="btn btn-secondary">Conheça o Gogroup</a>
+          <a href="#test-drive" class="btn btn-secondary">Faça o test drive <svg class="icon" width="18" height="18"><use href="#i-flag"/></svg></a>
         </div>
+        <p class="hero-hint"><svg class="icon" width="16" height="16"><use href="#i-trophy"/></svg> <span>Explore a página e desbloqueie as 4 conquistas do <button type="button" class="hero-hint-btn" data-open-hud>Painel do piloto</button>.</span></p>
         <p class="brand-statement">Victory is in your veins</p>
       </div>
 
@@ -217,6 +221,86 @@
           <img class="brand-card-logo" src="assets/img/brands/yenzah.png" alt="Yenzah" loading="lazy" width="600" height="208">
           <span class="brand-card-link">Visitar site <svg class="icon" width="14" height="14"><use href="#i-external"/></svg></span>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MANIFESTO (scroll-driven) ============ -->
+  <section id="manifesto" class="manifesto" aria-labelledby="manifesto-title">
+    <div class="manifesto-sticky">
+      <div class="container manifesto-inner">
+        <p class="kicker kicker-inverse">Em que acreditamos?</p>
+        <h2 id="manifesto-title" class="manifesto-lead">Acreditamos que gente excepcional, com alta ambição e alto senso de dono, constrói o que a média considera impossível.</h2>
+        <div class="manifesto-lines" data-manifesto>
+          <p>Não estamos aqui para operar no piloto automático.</p>
+          <p>Não estamos aqui para manter o jogo como ele é.</p>
+          <p>Não estamos aqui para aceitar burocracia, lentidão, complacência ou mediocridade.</p>
+          <p class="manifesto-punch">Estamos aqui para elevar a barra.</p>
+        </div>
+      </div>
+      <img class="manifesto-rocket" src="assets/img/stickers/rocket.png" alt="" aria-hidden="true" loading="lazy" width="300" height="416">
+      <span class="bleed-word" aria-hidden="true">gogroup</span>
+    </div>
+  </section>
+
+  <!-- ============ TEST DRIVE: MOTORISTA OU PASSAGEIRO ============ -->
+  <section id="test-drive" class="section drive-section">
+    <img class="drive-car-art" src="assets/img/stickers/f1car-sticker.png" alt="" aria-hidden="true" loading="lazy" width="420" height="515">
+    <div class="container">
+      <header class="section-head drive-head">
+        <p class="kicker">Test drive</p>
+        <h2>Uma empresa de <span class="hl-block">Motoristas</span></h2>
+        <p class="lead">Passageiros esperam, motoristas agem. Classifique 10 atitudes e mostre que você reconhece um motorista de longe.</p>
+      </header>
+
+      <div class="drive-game" id="driveGame">
+        <div class="drive-track" aria-hidden="true">
+          <span class="drive-track-label">Largada</span>
+          <div class="drive-lane">
+            <div class="drive-lane-fill" data-drive-fill></div>
+            <img class="drive-token" data-drive-token src="assets/img/stickers/helmet.png" alt="" width="400" height="310">
+          </div>
+          <span class="drive-finish"></span>
+        </div>
+
+        <div class="drive-screen" data-drive-screen="intro">
+          <div class="drive-rules">
+            <div class="drive-rule drive-rule-pass">
+              <p class="drive-rule-title">Passageiro</p>
+              <p>Espera alguém dizer o que fazer.</p>
+            </div>
+            <div class="drive-rule drive-rule-drive">
+              <p class="drive-rule-title">Motorista</p>
+              <p>Faz acontecer.</p>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary drive-start" data-drive-start>Dar a largada <svg class="icon" width="18" height="18"><use href="#i-flag"/></svg></button>
+          <p class="drive-hint">Use os botões, as setas <kbd>←</kbd> <kbd>→</kbd> do teclado ou arraste o card para os lados.</p>
+        </div>
+
+        <div class="drive-screen" data-drive-screen="play" hidden>
+          <p class="drive-count" data-drive-count>Atitude 1 de 10</p>
+          <div class="drive-card" data-drive-card>
+            <p class="drive-statement" data-drive-statement></p>
+            <span class="drive-stamp drive-stamp-pass" aria-hidden="true">Passageiro</span>
+            <span class="drive-stamp drive-stamp-drive" aria-hidden="true">Motorista</span>
+          </div>
+          <div class="drive-actions">
+            <button type="button" class="drive-btn drive-btn-pass" data-drive-answer="passageiro"><svg class="icon" width="18" height="18"><use href="#i-chevron-left"/></svg> Passageiro</button>
+            <button type="button" class="drive-btn drive-btn-drive" data-drive-answer="motorista">Motorista <svg class="icon" width="18" height="18"><use href="#i-chevron-right"/></svg></button>
+          </div>
+          <p class="drive-feedback" data-drive-feedback aria-live="polite"></p>
+        </div>
+
+        <div class="drive-screen" data-drive-screen="result" hidden>
+          <p class="drive-result-score"><span data-drive-score>10</span>/10</p>
+          <p class="drive-result-title" data-drive-result-title></p>
+          <p class="drive-result-quote">Passageiros esperam, motoristas agem. <strong>Gogroup é pura ação.</strong></p>
+          <div class="drive-result-actions">
+            <a href="#seu-mantra" class="btn btn-primary">Agora, descubra seu mantra <svg class="icon" width="18" height="18"><use href="#i-arrow-down"/></svg></a>
+            <button type="button" class="btn btn-ghost" data-drive-start>Jogar de novo</button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -367,6 +451,53 @@
     </div>
   </section>
 
+  <!-- ============ QUIZ: QUAL MANTRA ACELERA VOCÊ ============ -->
+  <section id="seu-mantra" class="section quiz-section">
+    <img class="section-doodle quiz-mind" src="assets/img/stickers/mind.png" alt="" aria-hidden="true" loading="lazy" width="400" height="487">
+    <div class="container">
+      <header class="section-head">
+        <p class="kicker">Autoconhecimento</p>
+        <h2>Qual mantra acelera você?</h2>
+        <p class="lead">5 voltas, 5 escolhas. Em cada volta, escolha a atitude que mais tem a sua cara. Todas elas são do nosso "alto padrão", então não existe resposta errada.</p>
+      </header>
+
+      <div class="quiz" id="mantraQuiz">
+        <div class="quiz-screen" data-quiz-screen="play">
+          <div class="quiz-top">
+            <p class="quiz-lap" data-quiz-lap>Volta 1 de 5</p>
+            <ol class="quiz-progress" data-quiz-progress aria-hidden="true">
+              <li></li><li></li><li></li><li></li><li></li>
+            </ol>
+          </div>
+          <fieldset class="quiz-question">
+            <legend class="quiz-prompt" data-quiz-prompt></legend>
+            <div class="quiz-options" data-quiz-options></div>
+          </fieldset>
+          <button type="button" class="quiz-back" data-quiz-back hidden><svg class="icon" width="16" height="16"><use href="#i-chevron-left"/></svg> Voltar</button>
+        </div>
+
+        <div class="quiz-screen quiz-result" data-quiz-screen="result" hidden>
+          <div class="quiz-result-art" data-quiz-result-art-wrap>
+            <img data-quiz-result-art src="" alt="" width="960" height="540">
+          </div>
+          <div class="quiz-result-body">
+            <p class="quiz-result-kicker">Seu mantra-motor é</p>
+            <h3 class="quiz-result-name" data-quiz-result-name></h3>
+            <span class="value-tag" data-quiz-result-tag></span>
+            <p class="quiz-result-def" data-quiz-result-def></p>
+            <ul class="quiz-bars" data-quiz-bars></ul>
+            <p class="quiz-result-tip"><svg class="icon" width="16" height="16"><use href="#i-spark"/></svg> <span>Na Entrevista Cultural, 3 pessoas de setores distintos vão querer entender se seus valores combinam com os nossos. Pense em situações reais em que você viveu este mantra.</span></p>
+            <div class="quiz-result-actions">
+              <button type="button" class="btn btn-secondary" data-quiz-see>Ver este mantra no detalhe</button>
+              <button type="button" class="btn btn-ghost-dark" data-quiz-restart>Refazer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="quiz-note">Isso é só para você se conhecer melhor: nada aqui é enviado para o time nem faz parte da avaliação do processo seletivo.</p>
+    </div>
+  </section>
+
   <!-- ============ TRAJETÓRIA ============ -->
   <section id="historia" class="section section-tint">
     <div class="container">
@@ -443,6 +574,20 @@
         <p class="lead">Veja como funciona nosso processo seletivo.</p>
       </header>
 
+      <div class="race" aria-hidden="true">
+        <span class="race-flag race-flag-start">Largada</span>
+        <div class="race-road">
+          <div class="race-road-fill" data-race-fill></div>
+          <span class="race-cp" data-race-cp="1">01</span>
+          <span class="race-cp" data-race-cp="2">02</span>
+          <span class="race-cp" data-race-cp="3">03</span>
+          <span class="race-cp" data-race-cp="4">04</span>
+          <span class="race-cp" data-race-cp="5">05</span>
+          <img class="race-token" data-race-token src="assets/img/stickers/helmet.png" alt="" width="400" height="310">
+        </div>
+        <span class="race-flag race-flag-end"></span>
+      </div>
+
       <div class="stepper-wrap">
         <div class="stepper" role="tablist" aria-label="Etapas do processo seletivo" id="stepperTabs">
           <button role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true" tabindex="0" data-step="1">
@@ -483,6 +628,7 @@
             <p class="card-eyebrow">Etapa 05 · Entrevista Cultural</p>
             <p>Última fase do processo seletivo. Nesta etapa, 3 pessoas do Gogroup de setores distintos irão te conhecer com o único objetivo de entender se você está culturalmente alinhado(a) — ou seja, se seus valores combinam com os nossos.</p>
           </div>
+          <button type="button" class="step-next" data-step-next>Próxima etapa <svg class="icon" width="16" height="16"><use href="#i-arrow-right"/></svg></button>
         </div>
       </div>
     </div>
@@ -764,10 +910,30 @@
   <p class="footer-legal">Gogroup · Manual da Pessoa Candidata</p>
 </footer>
 
+<!-- ============ PAINEL DO PILOTO (conquistas) ============ -->
+<div class="hud" id="hud">
+  <button type="button" class="hud-toggle" id="hudToggle" aria-expanded="false" aria-controls="hudPanel">
+    <svg class="icon" width="18" height="18"><use href="#i-trophy"/></svg>
+    <span class="hud-toggle-label">Painel do piloto</span>
+    <span class="hud-count" data-hud-count>0/5</span>
+  </button>
+  <div class="hud-panel" id="hudPanel" role="dialog" aria-labelledby="hudTitle" hidden>
+    <div class="hud-panel-head">
+      <p class="hud-title" id="hudTitle">Painel do piloto</p>
+      <button type="button" class="hud-close" data-hud-close aria-label="Fechar painel"><svg class="icon" width="18" height="18"><use href="#i-close"/></svg></button>
+    </div>
+    <p class="hud-sub" data-hud-sub>Explore a página e desbloqueie as 4 conquistas.</p>
+    <div class="hud-meter" aria-hidden="true"><span data-hud-meter></span></div>
+    <ul class="hud-list" data-hud-list></ul>
+    <a class="btn btn-primary hud-final" data-hud-final href="https://carreira.inhire.com.br/carreiras/gogroup/" target="_blank" rel="noopener noreferrer" hidden>Ver nossas vagas <svg class="icon" width="18" height="18"><use href="#i-arrow-right"/></svg></a>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
   <svg class="icon" width="20" height="20"><use href="#i-arrow-up"/></svg>
 </button>
 
-<script src="assets/script.js"></script>
+<script src="assets/script.js?v=3"></script>
 </body>
 </html>

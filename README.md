@@ -48,7 +48,8 @@ lugar (Netlify, Vercel estático, S3, etc.).
 ```
 index.html          → estrutura semântica de todas as seções
 assets/styles.css    → design tokens + todos os estilos (mobile-first)
-assets/script.js     → navbar, drawer mobile, stepper, carousel, scroll-reveal
+assets/script.js     → navbar, drawer mobile, stepper, carousel, scroll-reveal, manifesto,
+                       test drive, quiz de mantras, painel do piloto
 assets/favicon.svg   → ícone provisório (ver "Assets pendentes" abaixo)
 server.js            → servidor estático simples (Node, sem dependências) para dev local
 .claude/launch.json  → configuração de preview local
@@ -83,6 +84,32 @@ Ao atualizar o app no GoDeploy, suba `.scratch/deploy/index.html` como
 `index.html`, junto de `assets/favicon.svg`, `assets/script.js` e
 `assets/styles.css` (sem `assets/img/*` — já foram embutidas no HTML).
 
+## Experiência imersiva (interações baseadas no Deck de Cultura)
+
+Camada interativa com tema de corrida ("Uma empresa de Motoristas", "Victory is in your
+veins") e o visual do Deck de Cultura: color blocking com a paleta do Brandbook (azul
+protagonista, ciano, verde-limão), Poppins 800, wordmark "gogroup" gigante sangrando como
+elemento decorativo e formas sempre arredondadas. Todo texto das interações vem literalmente
+do Deck; só as instruções de uso (enunciados, feedbacks) foram escritas para a página.
+
+- **Manifesto (`#manifesto`)**: "Em que acreditamos?". As frases "Não estamos aqui para..."
+  acendem palavra por palavra conforme o scroll (seção sticky), e o foguete sobe junto.
+- **Test drive (`#test-drive`)**: jogo "Motorista ou Passageiro?". São 10 atitudes sorteadas
+  do quadro Motorista x Passageiro, respondidas por botões, pelas setas do teclado ou
+  arrastando o card. O capacete avança na pista a cada acerto.
+- **Qual mantra acelera você? (`#seu-mantra`)**: quiz de 5 voltas. Cada volta tem uma frase
+  do "Alto padrão" de cada mantra, embaralhadas. O resultado mostra o mantra dominante (arte,
+  tag, definição, ranking) e liga com a Entrevista Cultural. Nome, arte e cor são lidos do
+  próprio carousel de valores, então as imagens também funcionam no build do GoDeploy.
+  Nada é enviado a lugar nenhum.
+- **Pista da jornada**: o stepper do processo seletivo ganhou uma pista com checkpoints
+  01–05, o capacete andando até a etapa selecionada e o botão "Próxima etapa".
+- **Painel do piloto**: HUD flutuante com 4 conquistas (test drive, 5 valores, quiz e 5 etapas). Ao completar tudo: confete e CTA para as vagas. O progresso fica só no
+  `localStorage` do navegador de quem visita (chave `gogroup-painel-piloto-v1`), e a página
+  funciona normalmente se o storage estiver bloqueado.
+
+Tudo respeita `prefers-reduced-motion` (manifesto sem scrub, sem confete).
+
 ## Nossos valores é um carousel (igual aos depoimentos)
 
 Cada mantra aparece em um slide "completo" — arte oficial + tag + definição + traços +
@@ -116,8 +143,8 @@ corrida e a bandeira quadriculada perto de "Nossos valores", o troféu e o fogue
 "Prepare-se". `f1car.jpg` é o carro de Fórmula 1 do Deck de Cultura (slide "Uma empresa
 de Motoristas"), usado como fundo com fade na seção de CTA final — a cor de fundo da
 própria ilustração já é quase igual ao azul da seção, então a transição fica suave sem
-precisar de recorte. Sobraram alguns stickers extraídos mas não usados ainda (`mind.png`,
-`box-heart.png`, `lightbulb.png`, `badge.png`) — disponíveis para novas seções se quiser
+precisar de recorte. `mind.png` ilustra o quiz de mantras. Sobraram alguns stickers extraídos mas não usados ainda
+(`box-heart.png`, `lightbulb.png`, `badge.png`) — disponíveis para novas seções se quiser
 mais desse tratamento em algum lugar específico.
 
 ## Números de crescimento (seção "Nossa trajetória")
