@@ -316,31 +316,67 @@ h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); }
   .front-head { border-radius: var(--radius-card) var(--radius-card) 0 0; }
 }
 
-/* ================= BRAND GRID (Universo) ================= */
-.brand-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+/* ================= NOSSO UNIVERSO: trilha por ano de entrada no grupo ================= */
+.brand-journey { --bj-rail-x: 9px; --bj-pad: 40px; list-style: none; margin: 0; padding: 0; position: relative; }
+/* trilho vertical que liga os anos */
+.brand-journey::before {
+  content: ""; position: absolute; left: var(--bj-rail-x); top: 14px; bottom: 14px; width: 2px;
+  transform: translateX(-50%); background: rgba(38,89,165,.25); border-radius: 2px;
+}
+.bj-year { --bj-color: var(--color-primary); position: relative; padding-left: var(--bj-pad); display: grid; gap: 14px; }
+.bj-year + .bj-year { margin-top: 36px; }
+/* cada ano tem uma cor da paleta do brandbook, repetida no ponto e nos cards daquele ano */
+.bj-year:nth-child(6n+2) { --bj-color: var(--color-orange); }
+.bj-year:nth-child(6n+3) { --bj-color: var(--color-pink); }
+.bj-year:nth-child(6n+4) { --bj-color: var(--color-cyan); }
+.bj-year:nth-child(6n+5) { --bj-color: var(--color-yellow); }
+.bj-year:nth-child(6n+6) { --bj-color: var(--color-red); }
+
+.bj-marker { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px; }
+.bj-dot {
+  position: absolute; left: var(--bj-rail-x); top: 10px; width: 18px; height: 18px; border-radius: 50%;
+  transform: translateX(-50%); background: var(--bj-color); box-shadow: 0 0 0 5px var(--color-ice);
+}
+.bj-year:first-child .bj-dot { background: var(--color-accent); outline: 3px solid var(--color-primary); outline-offset: -3px; }
+.bj-year-num { font-family: var(--font-heading); font-weight: 800; font-size: 1.9rem; line-height: 1; color: var(--color-text); }
+.bj-year-note { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--color-text-soft); }
+
+.bj-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.bj-cards .brand-card { border-top-color: var(--bj-color); }
+
 .brand-card {
-  background: var(--color-white); border-radius: var(--radius-lg); padding: 30px 24px;
+  background: var(--color-white); border-radius: var(--radius-lg); padding: 20px 18px;
   text-decoration: none; box-shadow: var(--shadow-card); display: flex; flex-direction: column; gap: 14px;
   min-height: 130px; justify-content: space-between;
-  border-top: 3px solid var(--color-primary);
+  border-top: 4px solid var(--color-primary);
   transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
 }
-/* Color blocking: cada card do universo puxa uma cor da paleta do brandbook */
-.brand-grid .brand-card:nth-child(5n+2) { border-top-color: var(--color-orange); }
-.brand-grid .brand-card:nth-child(5n+3) { border-top-color: var(--color-pink); }
-.brand-grid .brand-card:nth-child(5n+4) { border-top-color: var(--color-cyan); }
-.brand-grid .brand-card:nth-child(5n+5) { border-top-color: var(--color-yellow); }
 .brand-card:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 22px 40px -20px rgba(10,61,122,.3); }
-.brand-card-name { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--color-text); }
-.brand-card-logo { max-width: 100%; max-height: 44px; width: auto; object-fit: contain; align-self: flex-start; }
-.brand-card-dates { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; margin: 0; padding-top: 12px; border-top: 1px solid rgba(38,89,165,.12); }
-.brand-card-dates dt { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--color-text-soft); }
-.brand-card-dates dd { margin: 2px 0 0; font-family: var(--font-heading); font-weight: 700; font-size: .95rem; color: var(--color-text); }
+.brand-card-logo { max-width: 100%; max-height: 40px; width: auto; object-fit: contain; align-self: flex-start; }
+.bj-meta { margin: 0; display: flex; flex-direction: column; gap: 2px; }
+.bj-join { font-family: var(--font-heading); font-weight: 700; font-size: .92rem; color: var(--color-text); }
+.bj-found { font-size: .8rem; color: var(--color-text-soft); }
 .brand-card-link { font-size: .82rem; font-weight: 700; color: var(--color-primary); display: flex; align-items: center; gap: 6px; }
 
-@media (min-width: 640px) { .brand-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-@media (min-width: 980px) { .brand-card-dates { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } }
-@media (min-width: 980px) { .brand-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (min-width: 640px) {
+  .bj-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+/* desktop: trilha horizontal, um ano por coluna e os cards empilhados sob o ponto */
+@media (min-width: 1000px) {
+  .brand-journey { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 16px; padding-top: 34px; }
+  .bj-year-wide { grid-column: span 2; }
+  .bj-year-wide .bj-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .brand-journey::before { left: 9px; right: 0; top: 9px; bottom: auto; width: auto; height: 2px; transform: translateY(-50%); }
+  .bj-year { padding-left: 0; gap: 14px; align-content: start; }
+  .bj-year + .bj-year { margin-top: 0; }
+  .bj-dot { left: 9px; top: -25px; transform: translate(-50%, -50%); }
+  .bj-marker { flex-direction: column; gap: 4px; }
+  .bj-year-num { font-size: 2rem; }
+  .bj-cards { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .bj-cards .brand-card { padding: 16px 14px; min-height: 0; gap: 10px; }
+  .bj-cards .brand-card-logo { max-height: 30px; }
+  .bj-join { font-size: .8rem; white-space: nowrap; }
+}
 
 /* ================= VALUES (carousel) ================= */
 .value-section { position: relative; overflow: hidden; }

@@ -22,8 +22,10 @@ tratamento bicolor usado antes.
 ## Logos das marcas do portfólio (`assets/img/brands/`)
 
 O Brandbook só documenta a marca-mãe Gogroup, não as marcas individuais do portfólio.
-Cada card de `#universo` usa o logo real da marca, com ano de fundação e mês de entrada
-no grupo. São 12 marcas: Gocase, AZ, Apice Cosméticos, Barbour's Beauty, Kokeshi, By Samia,
+`#universo` é uma trilha por ano de entrada no grupo (2015, 2022–2026): cada ano tem um
+ponto no trilho vertical e os cards das marcas que entraram nele. Cada card traz o logo real,
+a data de entrada, o ano de fundação (datas do Onboarding Gogroup) e o link para o site.
+São 12 marcas: Gocase, AZ, Apice Cosméticos, Barbour's Beauty, Kokeshi, By Samia,
 Rituária, Auá Natural, Lescent, Yenzah, Jump Ventures e DenaVita. A maioria dos logos veio
 do cabeçalho dos sites oficiais (a Gocase é o SVG vetorial inline do site). Os de Jump e
 DenaVita foram enviados pelo time, recortados (sem margem branca) e redimensionados para
