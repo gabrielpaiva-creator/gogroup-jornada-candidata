@@ -269,7 +269,7 @@ h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); }
 }
 
 /* ================= BRAND GRID (Universo) ================= */
-.brand-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.brand-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 .brand-card {
   background: var(--color-white); border-radius: var(--radius-lg); padding: 30px 24px;
   text-decoration: none; box-shadow: var(--shadow-card); display: flex; flex-direction: column; gap: 14px;
@@ -285,10 +285,14 @@ h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); }
 .brand-card:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 22px 40px -20px rgba(10,61,122,.3); }
 .brand-card-name { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--color-text); }
 .brand-card-logo { max-width: 100%; max-height: 44px; width: auto; object-fit: contain; align-self: flex-start; }
+.brand-card-dates { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; margin: 0; padding-top: 12px; border-top: 1px solid rgba(38,89,165,.12); }
+.brand-card-dates dt { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--color-text-soft); }
+.brand-card-dates dd { margin: 2px 0 0; font-family: var(--font-heading); font-weight: 700; font-size: .95rem; color: var(--color-text); }
 .brand-card-link { font-size: .82rem; font-weight: 700; color: var(--color-primary); display: flex; align-items: center; gap: 6px; }
 
-@media (min-width: 640px) { .brand-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 980px) { .brand-grid { grid-template-columns: repeat(5, 1fr); } }
+@media (min-width: 640px) { .brand-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 980px) { .brand-card-dates { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } }
+@media (min-width: 980px) { .brand-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
 
 /* ================= VALUES (carousel) ================= */
 .value-section { position: relative; overflow: hidden; }
