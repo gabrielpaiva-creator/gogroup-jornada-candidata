@@ -250,22 +250,70 @@ h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); }
   .hero-visual { display: block; }
 }
 
-/* ================= SPLIT LAYOUT (Sobre) ================= */
-.split-layout { display: grid; gap: 48px; align-items: center; margin-bottom: 56px; }
-.split-visual { position: relative; display: flex; align-items: center; justify-content: center; min-height: 220px; }
-.doodle-globe { opacity: .92; }
-.badge-floating {
-  position: absolute; top: 6%; right: 4%; background: var(--color-accent); color: var(--color-text);
-  padding: 10px 16px; border-radius: var(--radius-pill); font-weight: 700; font-size: .82rem;
-  display: flex; align-items: center; gap: 6px; box-shadow: var(--shadow-card);
+/* ================= O QUE É O GOGROUP (três frentes) ================= */
+.fronts-hub {
+  position: relative; max-width: 760px; margin: 0 auto; text-align: center;
+  background: var(--color-accent); border-radius: var(--radius-card); padding: 26px 24px 28px;
+  box-shadow: var(--shadow-soft);
 }
-.origin-card { margin-top: 26px; }
-.ideology-grid { display: grid; gap: 24px; }
+.fronts-hub-name { font-family: var(--font-heading); font-weight: 800; font-size: clamp(2rem, 6vw, 2.8rem); line-height: 1; color: var(--color-primary); margin: 0 0 10px; letter-spacing: -.02em; }
+.fronts-hub-caption { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--color-text); margin: 0 0 12px; }
+.fronts-hub-teams { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.fronts-hub-teams li { background: var(--color-white); color: var(--color-text); border-radius: var(--radius-pill); padding: 6px 14px; font-size: .82rem; font-weight: 700; }
 
-@media (min-width: 860px) {
-  .split-layout { grid-template-columns: .8fr 1.2fr; }
-  .split-layout .split-visual { order: 2; }
-  .ideology-grid { grid-template-columns: 1fr 1fr; }
+/* conectores: uma linha desce do hub e se abre para as três frentes */
+.fronts { --front-gap: 24px; list-style: none; margin: 0; padding: 48px 0 0; display: grid; gap: var(--front-gap); position: relative; }
+.fronts::before { content: ""; position: absolute; top: 0; left: 50%; width: 2px; height: 48px; background: rgba(38,89,165,.35); transform: translateX(-50%); }
+
+.front {
+  --front-color: var(--color-primary); --front-ink: var(--color-white);
+  position: relative; background: var(--color-white); border-radius: var(--radius-card); overflow: hidden;
+  box-shadow: var(--shadow-card); display: flex; flex-direction: column; padding: 0 0 28px;
+}
+.front-gocase { --front-color: var(--color-primary); }
+.front-gobeaute { --front-color: #B78FCB; --front-ink: #3E2A1E; }
+.front-jump { --front-color: #0B1B33; }
+
+.front-head {
+  background: var(--front-color); color: var(--front-ink);
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 28px 64px;
+}
+.front-num { font-family: var(--font-heading); font-weight: 800; font-size: 1.6rem; line-height: 1; }
+.front-tag { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; background: rgba(255,255,255,.18); padding: 6px 12px; border-radius: var(--radius-pill); }
+.front-gobeaute .front-tag { background: rgba(255,255,255,.4); }
+
+.front-logos {
+  margin: -46px 20px 22px; min-height: 84px; background: var(--color-white); border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-card); display: flex; align-items: center; justify-content: center; gap: 18px; padding: 14px 24px;
+}
+.front-logos img { max-height: 40px; max-width: 42%; width: auto; height: auto; object-fit: contain; }
+.front-logos img:only-child { max-height: 64px; max-width: 70%; }
+.front-logos-grid { border-radius: var(--radius-md); min-height: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 14px; padding: 16px 18px; }
+.front-logos-grid img { max-width: 100%; max-height: 22px; justify-self: center; }
+
+.front h3 { margin: 0 28px 8px; font-size: 1.5rem; }
+.front > p { margin: 0 28px 14px; color: var(--color-text-soft); }
+.front .front-subtitle { font-family: var(--font-heading); font-weight: 700; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--color-text); margin-top: 6px; margin-bottom: 10px; }
+.front-milestones, .front-reasons { list-style: none; margin: 0 28px 18px; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.front-milestones li { display: grid; grid-template-columns: 52px 1fr; gap: 10px; align-items: baseline; font-size: .92rem; }
+.front-milestones strong { font-family: var(--font-heading); color: var(--front-color); }
+.front-reasons li { position: relative; padding-left: 20px; font-size: .92rem; color: var(--color-text); }
+.front-reasons li::before { content: ""; position: absolute; left: 0; top: .5em; width: 9px; height: 9px; border-radius: 50%; background: var(--front-color); }
+.front .text-link { margin: auto 28px 0; }
+
+@media (min-width: 980px) {
+  .fronts { grid-template-columns: repeat(3, minmax(0, 1fr)); padding-top: 72px; }
+  /* mesma altura de logo nas três colunas para os títulos alinharem */
+  .front-logos { min-height: 122px; border-radius: var(--radius-md); }
+  .fronts::before { height: 36px; }
+  /* linha horizontal ligando o centro das três colunas */
+  .fronts::after {
+    content: ""; position: absolute; top: 36px; height: 2px; background: rgba(38,89,165,.35);
+    left: calc((100% - 2 * var(--front-gap)) / 6); right: calc((100% - 2 * var(--front-gap)) / 6);
+  }
+  .front::before { content: ""; position: absolute; top: -36px; left: 50%; width: 2px; height: 36px; background: rgba(38,89,165,.35); }
+  .front { overflow: visible; }
+  .front-head { border-radius: var(--radius-card) var(--radius-card) 0 0; }
 }
 
 /* ================= BRAND GRID (Universo) ================= */
