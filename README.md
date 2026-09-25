@@ -22,20 +22,14 @@ tratamento bicolor usado antes.
 ## Logos das marcas do portfólio (`assets/img/brands/`)
 
 O Brandbook só documenta a marca-mãe Gogroup, não as marcas individuais do portfólio.
-Em vez de usar wordmarks tipográficos genéricos, os logos reais de 8 das 10 marcas foram
-obtidos diretamente dos sites oficiais de cada uma (o logotipo `<img>`/`<svg>` do
-cabeçalho de cada site, na maior resolução disponível — no caso da Gocase, o próprio SVG
-vetorial inline do site):
+Cada card de `#universo` usa o logo real da marca, com ano de fundação e mês de entrada
+no grupo. São 12 marcas: Gocase, AZ, Apice Cosméticos, Barbour's Beauty, Kokeshi, By Samia,
+Rituária, Auá Natural, Lescent, Yenzah, Jump Ventures e DenaVita. A maioria dos logos veio
+do cabeçalho dos sites oficiais (a Gocase é o SVG vetorial inline do site). Os de Jump e
+DenaVita foram enviados pelo time, recortados (sem margem branca) e redimensionados para
+480px de largura.
 
-- Com logo real: Gocase, Apice Cosméticos, Barbour's Beauty, Kokeshi, By Samia,
-  Rituária, Auá Natural, Lescent.
-- Sem logo: **AZ** (o site azbuy.com.br não respondeu em nenhuma tentativa de acesso —
-  provavelmente fora do ar ou bloqueado) e **Yenzah** (não tem site próprio, só
-  Instagram). Esses dois continuam com wordmark tipográfico em `.brand-card-name`.
-
-**Onde trocar:** basta substituir o arquivo correspondente em `assets/img/brands/` (ou
-adicionar um novo `<img class="brand-card-logo">` para AZ/Yenzah em `index.html`,
-seção `#universo`) quando/se você tiver os arquivos oficiais.
+**Onde trocar:** basta substituir o arquivo correspondente em `assets/img/brands/`.
 
 ## Stack
 

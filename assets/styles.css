@@ -292,7 +292,7 @@ h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); }
 
 @media (min-width: 640px) { .brand-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (min-width: 980px) { .brand-card-dates { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } }
-@media (min-width: 980px) { .brand-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+@media (min-width: 980px) { .brand-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
 /* ================= VALUES (carousel) ================= */
 .value-section { position: relative; overflow: hidden; }
