@@ -92,7 +92,7 @@
 
   /* ---------- Scroll reveal ---------- */
   var revealTargets = document.querySelectorAll(
-    '.card, .brand-card, .value-card, .timeline-item, .number-card, .tip-card, .office-card, .step-panel, .section-head, .drive-game, .quiz'
+    '.card, .brand-card, .value-card, .tip-card, .office-card, .step-panel, .section-head, .drive-game, .quiz'
   );
   revealTargets.forEach(function (el, i) {
     el.setAttribute('data-reveal', '');

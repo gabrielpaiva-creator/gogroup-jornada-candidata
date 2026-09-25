@@ -321,39 +321,6 @@ h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); }
   .value-body { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 }
 
-/* ================= TIMELINE ================= */
-.timeline { display: flex; flex-direction: column; gap: 6px; margin-bottom: 64px; position: relative; padding-left: 28px; border-left: 2px dashed rgba(38,89,165,.3); }
-.timeline-item { position: relative; padding: 18px 0 18px 22px; }
-.timeline-dot { position: absolute; left: -37px; top: 24px; width: 14px; height: 14px; border-radius: 50%; background: var(--color-accent); box-shadow: 0 0 0 5px var(--color-background); }
-.timeline-year { font-family: var(--font-heading); font-weight: 700; color: var(--color-primary); font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; }
-.timeline-item h3 { margin: 6px 0 6px; font-size: 1.2rem; }
-.timeline-item p { color: var(--color-text-soft); max-width: 60ch; margin: 0; }
-
-@media (min-width: 900px) {
-  .timeline { flex-direction: row; border-left: none; border-top: 2px dashed rgba(38,89,165,.3); padding-left: 0; padding-top: 28px; gap: 28px; }
-  .timeline-item { flex: 1; padding: 0 0 0 4px; }
-  .timeline-dot { left: 12px; top: -35px; }
-}
-
-/* ================= NUMBERS ================= */
-.numbers-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-.number-card { background: var(--color-white); border-radius: var(--radius-lg); padding: 26px 22px; box-shadow: var(--shadow-card); border-top: 3px solid var(--color-primary); }
-.number-card:nth-child(2) { border-top-color: var(--color-orange); }
-.number-card:nth-child(3) { border-top-color: var(--color-pink); }
-.number-card:nth-child(4) { border-top-color: var(--color-cyan); }
-.number-card:nth-child(5) { border-top-color: var(--color-yellow); }
-.number-card-accent { background: var(--color-primary); color: var(--color-white); border-top-color: var(--color-accent); }
-.number-card-accent .number-label, .number-card-accent .number-growth { color: rgba(255,255,255,.85); }
-.number-label { font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--color-text-soft); margin-bottom: 8px; }
-.number-value { font-family: var(--font-heading); font-weight: 700; font-size: 1.3rem; margin-bottom: 6px; }
-.number-value span { color: var(--color-accent); padding: 0 4px; }
-.number-growth { font-size: .82rem; font-weight: 600; color: var(--color-primary); margin: 0; }
-.number-card-accent .number-growth { color: var(--color-accent); }
-.numbers-note { margin-top: 20px; font-size: .82rem; color: var(--color-text-soft); }
-
-@media (min-width: 640px) { .numbers-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 980px) { .numbers-grid { grid-template-columns: repeat(6, 1fr); } }
-
 /* ================= JOURNEY STEPPER ================= */
 .stepper-wrap { display: flex; flex-direction: column; gap: 28px; }
 .stepper { display: flex; flex-direction: column; gap: 10px; }

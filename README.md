@@ -147,13 +147,6 @@ precisar de recorte. `mind.png` ilustra o quiz de mantras. Sobraram alguns stick
 (`box-heart.png`, `lightbulb.png`, `badge.png`) — disponíveis para novas seções se quiser
 mais desse tratamento em algum lugar específico.
 
-## Números de crescimento (seção "Nossa trajetória")
-
-Os valores de 2024 (realizado) e Visão 2025 (projeção) foram extraídos do gráfico do
-manual e a matemática de cada linha foi conferida (ex.: 225M → 500M = +122%) antes de
-serem usados, para garantir fidelidade aos dados originais. Nenhum número foi
-arredondado além do que já vinha no material.
-
 ## Notas de acessibilidade
 
 - Stepper da jornada segue o padrão ARIA de `tablist`/`tab`/`tabpanel`, navegável por
